@@ -21,12 +21,10 @@ function fetchAllBars(event) {
         let col = $("<div>").addClass("col s12 m4 l4");
         let card = $("<div>").addClass("card");
         let body = $("<div>").addClass("card-content");
-        let btn = $("<a>")
-          .addClass(
-            "btn-floating halfway-fab waves-effect waves-light red delete-btn"
-          )
-          .attr("button-id", i);
-        let name = $("<p>").addClass("#bar-name").text(data[i].barName);
+        let name = $("<h5>").addClass("#bar-name").text(data[i].barName);
+        let id = $("<p>")
+          .addClass("#barId")
+          .text("Id: " + data[i].id);
         let city = $("<p>")
           .addClass("#city-name")
           .text("City: " + data[i].barCity);
@@ -43,17 +41,16 @@ function fetchAllBars(event) {
         // merge together and put on page
 
         col.append(
-          card.append(body.append(btn, name, city, state, action, modal))
+          card.append(body.append(name, id, city, state, action, modal))
         );
         $("#barList").append(col);
       }
     });
 }
-// let modal1 = $("div.modal")
 
 function modalInfo(index) {
-  $("#barId").text(`Id: ${searchResult[index].id}`);
   $("#bar-name").text(`Bar Name: ${searchResult[index].barName}`);
+  $("#barId").text(`Id: ${searchResult[index].id}`);
   $("#address").text(`Address: ${searchResult[index].barAddress}`);
   $("#city-name").text(`City: ${searchResult[index].barCity}`);
   $("#state").text(`State: ${searchResult[index].barState}`);
@@ -71,28 +68,4 @@ $(document).ready(function () {
   });
 });
 
-// $(document).on("click", ".delete-btn", function (e) {
-//   let index = e.currentTarget.getAttribute("id");
-//   let barId = $(e.id);
-//   console.log(barId);
-//   // deletePost(barId);
-// });
-
-// function handleSearchFormSubmit(e) {
-//   e.preventDefault();
-//   let input = document.querySelector("#allBars");
-//   fetchAllBars(input);
-// }
-
-searchForm.addEventListener("click", fetchAllBars());
-
-// const deletePost = (e) => {
-// const { id } =
-//   fetch(`/api/bars/${id}`, {
-//     method: "DELETE",
-//     headers: {
-//       "Content-Type": "application/json",
-//       // 'Content-Type': 'application/x-www-form-urlencoded',
-//     },
-//   }).then((response) => response.json("deleted"));
-// };
+fetchAllBars();

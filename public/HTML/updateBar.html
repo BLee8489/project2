@@ -23,7 +23,19 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Brewery Explorer</a>
+        <div class="container">
+          <div class="row">
+            <div class="col s6 m6 l6">
+              <a href="#! ./index" class="brand-logo">Brewery Explorer</a>
+            </div>
+            <div class="col s6 m6 l6">
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="./search">Search by City</a></li>
+                <li><a href="./index">My Breweries</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
     <br />
@@ -43,7 +55,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="barNameInput">Bar Name</label>
+              <label for="barNameInput">Name</label>
               <input
                 type="barName"
                 class="form-control"
@@ -52,7 +64,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="barRatingInput">Bar Rating (1-10)</label>
+              <label for="barRatingInput">Rating (1-10)</label>
               <input
                 type="barRating"
                 class="form-control"
@@ -61,7 +73,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="barAddressInput">Bar Street Address</label>
+              <label for="barAddressInput">Street Address</label>
               <input
                 type="barAddress"
                 class="form-control"
@@ -70,7 +82,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="barCityInput">Bar City</label>
+              <label for="barCityInput">City</label>
               <input
                 type="barCity"
                 class="form-control"
@@ -79,7 +91,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="barStateInput">Bar State</label>
+              <label for="barStateInput">State</label>
               <input
                 type="barState"
                 class="form-control"
@@ -88,7 +100,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="barReviewLink">Bar Review Link</label>
+              <label for="barReviewLink">Review Link</label>
               <input
                 type="barReviewLink"
                 class="form-control"
@@ -97,7 +109,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="barStateInput">Bar Phone Number</label>
+              <label for="barStateInput">Phone Number</label>
               <input
                 type="barPhone"
                 class="form-control"
@@ -106,7 +118,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="barStateInput">Bar Website</label>
+              <label for="barStateInput">Website</label>
               <input
                 type="barWebsite"
                 class="form-control"
